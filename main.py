@@ -1,16 +1,22 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+from etl.etl_job import ETL_Upper
+from etl.ingestion import Ingester
 
 
-# Press the green button in the gutter to run the script.
+def main():
+    ingester = Ingester("jimmy-hadrian-ml-data-bucket")
+    ingester.write_to_s3("data/sample_data.csv")
+    
+    etl = ETL_Upper("jimmy-hadrian-ml-data-bucket")
+    etl.download_data("data/sample_data.csv")
+    etl.transform_data_all_upper()
+    etl.upload_csv_to_sql()
+    etl.print_records()
+
+    print("ETL Job Complete!")
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    main()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -1,6 +1,6 @@
-Name,Superpower,Affiliation
-Iron Man,Flight,Avengers
-Captain America,Super Strength,Avengers
-Thor,Lightning,Avengers
-Black Widow,Martial Arts,Avengers
-Loki,Shape-Shifting,Villain
+Id,Name,Superpower,Affiliation
+1,Iron Man,Flight,Avengers
+2,Captain America,Super Strength,Avengers
+3,Thor,Lightning,Avengers
+4,Black Widow,Martial Arts,Avengers
+5,Loki,Shape-Shifting,Villain
